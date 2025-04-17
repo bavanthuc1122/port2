@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 26, 26, 26;
+  --background-end-rgb: 26, 26, 26;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+.nav-link {
+  @apply px-3 py-1 text-sm rounded-full transition-colors;
+}
+
+.nav-link.active {
+  @apply bg-white text-black;
+}
+
+.nav-link:hover:not(.active) {
+  @apply bg-gray-800;
+}
+
+.social-icon {
+  @apply w-6 h-6 text-white hover:text-gray-300 transition-colors;
+}
+
+.image-grid {
+  @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2;
+}
+
+.image-card {
+  @apply relative overflow-hidden rounded-md;
+}
+
+.image-card img {
+  @apply w-full h-full object-cover transition-transform duration-300;
+}
+
+.image-card:hover img {
+  @apply scale-105;
+}
+
+.image-overlay {
+  @apply absolute inset-0 bg-black bg-opacity-30 opacity-0 transition-opacity duration-300 flex items-end p-3;
+}
+
+.image-card:hover .image-overlay {
+  @apply opacity-100;
+}
+
+.skill-button {
+  @apply text-xs text-white/80 hover:text-white transition-colors;
+}
+
+.see-all {
+  @apply px-4 py-1 text-xs border border-white/50 rounded-full hover:bg-white hover:text-black transition-colors;
+}
